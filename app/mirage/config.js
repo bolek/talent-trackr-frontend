@@ -1,5 +1,25 @@
 export default function() {
 
+  this.get('/api/profiles/:id', function(db, request) {
+    let profile_id = request.params.id;
+
+    return {
+      data: {
+        type: 'profiles',
+        id: profile_id,
+        attributes: db.profiles.find(profile_id)
+      }
+    };
+  });
+
+  this.get('/api/profiles', function(db, request) {
+    return {
+      data: db.profiles.map(attrs => (
+        {type: 'profiles', id: attrs.id, attributes: attrs }
+      ))
+    };
+  })
+
   // These comments are here to help you get started. Feel free to delete them.
 
   /*
