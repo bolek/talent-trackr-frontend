@@ -1,3 +1,17 @@
-<h2 id="title">Welcome to Ember</h2>
+<div class="whole-page-container">
+  <div class="main-ui">
+    {{tt-side-menu}}
 
-{{outlet}}
+    <div class="view-container">
+      <div class="ui borderless menu">
+        <a class="item active"> Profiles </a>
+        <a class="item"> Contracts </a>
+        <a class="item"> Admin </a>
+      </div>
+
+      <div class="view-container__content">
+          {{outlet}}
+      </div>
+    </div>
+  </div>
+</div>

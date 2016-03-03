@@ -6,6 +6,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('profile', { path: '/profiles/:profile_id' });
+  this.route('profiles');
 });
 
 export default Router;
